@@ -882,3 +882,9 @@ object {
 .gallery-caption {
 	display: block;
 }
+
+
+.creator {
+  font-weight: lighter;
+  font-size: 50%;
+}
