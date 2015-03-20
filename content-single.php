@@ -13,8 +13,8 @@
 		<div class="entry-content">
 			
 			<!-- Movie -->
-			<div class="movie-content">
-				<div class="movie-poster">
+			<div class="movie-container page-text-container">
+				<div class="movie-poster page-image">
 					<?php
 					// check if post has as post thumbail assigned to it
 						if ( has_post_thumbnail() ) {
@@ -25,7 +25,7 @@
 					?>
 				</div>
 				<!-- Movie-info -->
-				<div class="artist-statement">
+				<div class="flex-column">
 					<header class="movie-info">
 						<h1 class="entry-title">
 						  	<?php the_title(); ?> 
@@ -55,9 +55,9 @@
 			</div>
 
 		<!-- Artist-->
-			<div class="artist-content">
+			<div class="artist-container page-text-container">
 				<!-- Artist Picture -->
-				<div class="artist-picture">
+				<div class="artist-picture page-image">
 					<?php 
 						$image = get_field('profile_picture');
 						if( !empty($image) ): ?>
@@ -66,7 +66,7 @@
 					<?php endif; ?>
 				</div>
 				<!-- Artist info-->
-				<div class="artist-statement">
+				<div class="flex-column">
 					<header class="movie-info">
 						<h1 class="entry-title">
 				                <?php the_field('first_name'); ?> <?php the_field('last_name'); ?>

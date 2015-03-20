@@ -762,35 +762,29 @@ a:active {
 	margin:0;
 }
 
+.page-text-container {
+	display: -webkit-flex;
+	display: flex;
+	flex-flow: row wrap;
+}
+
+.page-image {
+	width:160px;
+	margin-right:24px;
+	margin-top:12px;
+}
+
+.flex-column {
+	-webkit-flex:1;
+	flex:1;
+
+}
+
 .creator {
 	font-size: 0.7em;
 	font-weight: 400;
 }
-.movie-info{
-	display:inline-block;
-	vertical-align:top;
-}
-.movie-poster {
-	max-width:160px;
-	margin-right:24px;
-	margin-top:12px;
-	display:inline-block;
-	vertical-align:top;
-}
 
-.artist-picture {
-	max-width:160px;
-	margin-right:24px;
-	margin-top:12px;
-	display:inline-block;
-	vertical-align:top;
-}
-
-.artist-statement {
-	max-width:680px;
-	display:inline-block;
-	vertical-align:top;
-}
 .hr hr {
 	margin-top:20px;
 }
