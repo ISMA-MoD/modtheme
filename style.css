@@ -789,6 +789,15 @@ a:active {
 	margin-top:20px;
 }
 
+@media only screen and (max-width: 640px)  { 
+	.movie-poster {
+		display:none;
+	}
+	.page-text-container {
+		flex-direction:column;
+	}
+}
+
 
 /*--------------------------------------------------------------
 10.1 Header
