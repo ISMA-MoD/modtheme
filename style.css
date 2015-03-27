@@ -789,6 +789,14 @@ a:active {
 	margin-top:20px;
 }
 
+
+@media only screen and (min-width: 1200px) {
+	.movie-wrapper{
+			max-width: 960px;
+	padding: 0 2em;
+	margin:auto;
+	}
+}
 @media only screen and (max-width: 640px)  { 
 	.movie-poster {
 		display:none;
@@ -868,6 +876,10 @@ ul.nav-menu {
 	max-width: 960px;
 	padding: 0 2em;
 	margin:auto;
+}
+
+.movie-wrapper{
+
 }
 
 .switch a{

@@ -4,12 +4,15 @@
  */
 ?>
 
-<div class="wrapper">
-	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
+	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<div class="movie-wrapper">
 		<div class="the-movie embed-container" >
 			<iframe src='http://player.vimeo.com/video/121144312' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 		</div>
+	</div>
+
+	<div class="wrapper">
 		<div class="entry-content">
 			
 			<!-- Movie -->
