@@ -865,6 +865,10 @@ ul.nav-menu {
 /*--------------------------------------------------------------
 10.1 Posts and pages
 --------------------------------------------------------------*/
+#main-body {
+    display: flex;
+}
+
 .wrapper{
 	max-width: 960px;
 	padding: 0 2em;
@@ -901,12 +905,17 @@ ul.nav-menu {
 .entry-content,
 .entry-summary {
 	margin: 1.5em 0 0;
-    padding: 150px;
+    padding-left: 150px;
+    padding-right: 200px;
 }
 
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
+}
+
+#main-picture {
+    width: 100%;
 }
 
 /*--------------------------------------------------------------
