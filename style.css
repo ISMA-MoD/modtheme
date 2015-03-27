@@ -112,7 +112,12 @@ dfn {
 }
 
 h1 {
-	font-size: 2em;
+	font-size: 1.8em;
+	margin: 0.67em 0;
+}
+
+h2 {
+	font-size: 1.5em;
 	margin: 0.67em 0;
 }
 
@@ -284,6 +289,8 @@ h4,
 h5,
 h6 {
 	clear: both;
+	padding-top:8px;
+	line-height:1.1;
 }
 
 p {
@@ -495,17 +502,17 @@ textarea {
 5.1 Links
 --------------------------------------------------------------*/
 a {
-	color: royalblue;
+	color: #303030;
+	text-decoration:none;
 }
 
 a:visited {
-	color: purple;
 }
 
 a:hover,
 a:focus,
 a:active {
-	color: midnightblue;
+	color: #303030;
 }
 
 a:focus {
@@ -762,6 +769,10 @@ a:active {
 	margin:0;
 }
 
+.meta-content {
+	padding-top:10px;
+}
+
 .page-text-container {
 	display: -webkit-flex;
 	display: flex;
@@ -790,7 +801,7 @@ a:active {
 }
 
 
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 1441px) {
 	.movie-wrapper{
 		max-width: 960px;
 		padding: 0 2em;
