@@ -10,13 +10,7 @@
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'mod' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'mod' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( __( 'Theme: %1$s by %2$s.', 'mod' ), 'modtheme', '<a href="http://underscores.me/" rel="designer">ISMA309</a>' ); ?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
+
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

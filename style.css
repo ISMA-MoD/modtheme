@@ -150,7 +150,7 @@ svg:not(:root) {
 }
 
 figure {
-	margin: 1em 40px;
+	margin: 0;
 }
 
 hr {
@@ -274,6 +274,7 @@ textarea {
 	font-size: 16px;
 	font-size: 1rem;
 	line-height: 1.5;
+	font-family: 'Roboto', sans-serif;
 }
 
 h1,
@@ -532,10 +533,6 @@ a:active {
 	padding-left: 0;
 }
 
-.main-navigation li {
-	float: left;
-	position: relative;
-}
 
 .main-navigation a {
 	display: block;
@@ -591,15 +588,28 @@ a:active {
 	display: none;
 }
 
-@media screen and (max-width: 600px) {
+
+.menu-toggle,
+.main-navigation.toggled .nav-menu {
+	display: block;
+}
+
+.main-navigation ul {
+	display: none;
+}
+
+/* Wider screens -> currently breaks at 900px wide */
+@media screen and (min-width: 900px) {
+
 	.menu-toggle,
 	.main-navigation.toggled .nav-menu {
-		display: block;
+		display: none;
 	}
 
 	.main-navigation ul {
-		display: none;
+		display: block;
 	}
+
 }
 
 .site-main .comment-navigation,
@@ -725,12 +735,146 @@ a:active {
 	display: none;
 }
 
+
+
 /*--------------------------------------------------------------
 10.0 Content
 --------------------------------------------------------------*/
+
+.embed-container { 
+	position: relative; 
+	padding-bottom: 56.25%; 
+	height: 0; 
+	overflow: hidden; 
+	max-width: 100%; 
+	} 
+.embed-container iframe, 
+.embed-container object, 
+.embed-container embed { 
+	position: absolute; 
+	top: 0; 
+	left: 0; 
+	width: 100%; 
+	height: 100%; 
+}
+
+.entry-title {
+	margin:0;
+}
+
+.creator {
+	font-size: 0.7em;
+	font-weight: 400;
+}
+.movie-info{
+	display:inline-block;
+	vertical-align:top;
+}
+.movie-poster {
+	max-width:160px;
+	margin-right:24px;
+	margin-top:12px;
+	display:inline-block;
+	vertical-align:top;
+}
+
+.artist-picture {
+	max-width:160px;
+	margin-right:24px;
+	margin-top:12px;
+	display:inline-block;
+	vertical-align:top;
+}
+
+.artist-statement {
+	max-width:680px;
+	display:inline-block;
+	vertical-align:top;
+}
+.hr hr {
+	margin-top:20px;
+}
+
+
+/*--------------------------------------------------------------
+10.1 Header
+--------------------------------------------------------------*/
+
+.site-header {
+	position: relative;
+	background-color: #222;
+	color: white;
+}
+
+.site-header a {
+	color: white;
+	text-decoration: none;
+}
+
+.site-title {
+	margin: .5em 0;
+	text-align: center;
+	font-size: 130%;
+	text-transform: uppercase;
+}
+
+.menu-toggle {
+ 	position: absolute;
+	top: 0;
+	padding: 1em;
+	border: none;
+	background: none;
+	box-shadow: none;
+	text-shadow: none;
+	color: white;
+	font-size: 1em;
+}
+
+.menu-toggle:hover, 
+.menu-toggle:focus {
+  border-color: none;
+  box-shadow: none;
+}
+
+
+/* MENU */
+
+ul.nav-menu {
+	padding: 1em;
+}
+
+.nav-menu li a {
+	padding-top: 1em;
+	padding-bottom: 1em;
+	border-top: 1px solid hsl(0, 0%, 25%);
+	font-size: 1.4em;
+	text-transform: lowercase;
+}
+
+.menu-item-description {
+	font-size: 60%;
+	font-style: italic;
+	color: hsl(0, 0%, 50%);
+}
+
+
 /*--------------------------------------------------------------
 10.1 Posts and pages
 --------------------------------------------------------------*/
+.wrapper{
+	max-width: 960px;
+	padding: 0 2em;
+	margin:auto;
+}
+
+.switch a{
+	display: block;
+	padding: .5em 1em;
+	background: hsl(50%,100%, 50%);
+	color: white;
+	border-radius:.5em;
+}
+
 .sticky {
 	display: block;
 }
@@ -761,37 +905,69 @@ a:active {
 }
 
 /*--------------------------------------------------------------
-10.2 Asides
+10.2 Student Index
 --------------------------------------------------------------*/
-.blog .format-aside .entry-title,
-.archive .format-aside .entry-title {
-	display: none;
+
+.student {
+	width: 33%;
 }
+
 
 /*--------------------------------------------------------------
-10.3 Comments
+11.0 Layout
 --------------------------------------------------------------*/
-.comment-content a {
-	word-wrap: break-word;
+
+/* Move header to left side at 900px width using flexbox */
+@media screen and (min-width: 900px) {
+	.site {
+		position: relative;
+		display: flex;
+	}
+	
+	.site-header {
+		flex: 0 0 320px;
+		height: 100vh;
+		border-left: 100px solid white;
+	}
+
+	.site-content {
+		flex: 1 1 auto;
+	}
+	
+	.persistent {
+		position: fixed;
+		width: 220px;
+		background: #222;
+
+	}
+	.site-title {
+		position: fixed;
+		left: 120px;
+		width: 100vh;
+		margin: 0;
+		padding: 0;
+		transform: rotate(90deg);
+		transform-origin: left top 0;
+		font-size: 9vh;
+	}
+
+	.site-title a {
+		color: #222;
+	}
+
+	.main-navigation {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		height: 100vh;
+	}
+
+	ul.nav-menu {
+		padding: 2em;
+	}
 }
 
-.bypostauthor {
-	display: block;
-}
 
-/*--------------------------------------------------------------
-11.0 Infinite scroll
---------------------------------------------------------------*/
-/* Globally hidden elements when Infinite Scroll is supported and in use. */
-.infinite-scroll .posts-navigation, /* Older / Newer Posts Navigation (always hidden) */
-.infinite-scroll.neverending .site-footer { /* Theme Footer (when set to scrolling) */
-	display: none;
-}
-
-/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
-.infinity-end.neverending .site-footer {
-	display: block;
-}
 
 /*--------------------------------------------------------------
 12.0 Media

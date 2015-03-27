@@ -264,3 +264,4 @@ function mod_category_transient_flusher() {
 }
 add_action( 'edit_category', 'mod_category_transient_flusher' );
 add_action( 'save_post',     'mod_category_transient_flusher' );
+
