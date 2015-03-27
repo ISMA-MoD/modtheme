@@ -97,6 +97,11 @@ add_filter( 'walker_nav_menu_start_el', 'mod_nav_description', 10, 4 );
  */
 function mod_scripts() {
 	wp_enqueue_style( 'mod-style', get_stylesheet_uri() );
+    
+    if (is_home()) {
+        wp_enqueue_script( 'isotope', get_template_directory_uri() . '/js/isotope.pkgd.min.js', array('jquery'), null, true ); 
+        wp_enqueue_script( 'isotope-settings', get_template_directory_uri() . '/js/isotope.settings.js', array('isotope'), null, true ); 
+    }
 
 	wp_enqueue_script( 'mod-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
@@ -132,3 +137,22 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+add isotope
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
