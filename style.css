@@ -777,6 +777,7 @@ a:active {
 	display: -webkit-flex;
 	display: flex;
 	flex-flow: row wrap;
+	padding-bottom:20px;
 }
 
 .page-image {
@@ -887,6 +888,12 @@ ul.nav-menu {
 	max-width: 960px;
 	padding: 0 2em;
 	margin:auto;
+}
+
+.artist-wrapper{
+	background-color: #eee;
+	width:100%;
+	padding-top:20px;
 }
 
 .movie-wrapper{

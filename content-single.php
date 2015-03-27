@@ -56,49 +56,55 @@
 					<p><?php the_content(); ?></p>
 				</div>
 			</div>
+		</div>
+	</div>
 
-		<!-- Artist-->
-			<div class="artist-container page-text-container">
-				<!-- Artist Picture -->
-				<div class="artist-picture page-image">
-					<?php 
-						$image = get_field('profile_picture');
-						if( !empty($image) ): ?>
-							<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+		<div class="artist-wrapper">
+			<div class="wrapper">
+			<!-- Artist-->
+				<div class="artist-container page-text-container">
+					<!-- Artist Picture -->
+					<div class="artist-picture page-image">
+						<?php 
+							$image = get_field('profile_picture');
+							if( !empty($image) ): ?>
+								<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
 
-					<?php endif; ?>
+						<?php endif; ?>
+					</div>
+					<!-- Artist info-->
+					<div class="flex-column">
+						<header class="movie-info">
+							<h1 class="entry-title">
+					                <?php the_field('first_name'); ?> <?php the_field('last_name'); ?>
+				        	</h1>
+					        <div class="meta-content">
+					        	<span class="artist-major">
+					            	<a href="#">
+					            		<?php echo get_the_category_list( ', ');?>
+					            	</a>
+					            </span> | 
+					            <span class="artist-email">
+					            	<a href="#"><?php the_field('artist_email'); ?></a>
+					            </span> | 
+					            <span class="artist-website">
+					                <a href="#"><?php the_field('artist_website'); ?></a>
+					       		 </span>
+					        </div><!-- .meta-content -->
+						</header><!-- .entry-header -->
+						<div class="hr"><hr/></div>
+						<p><?php the_field('artist_statement'); ?></p>
+					</div>
 				</div>
-				<!-- Artist info-->
-				<div class="flex-column">
-					<header class="movie-info">
-						<h1 class="entry-title">
-				                <?php the_field('first_name'); ?> <?php the_field('last_name'); ?>
-			        	</h1>
-				        <div class="meta-content">
-				        	<span class="artist-major">
-				            	<a href="#">
-				            		<?php echo get_the_category_list( ', ');?>
-				            	</a>
-				            </span> | 
-				            <span class="artist-email">
-				            	<a href="#"><?php the_field('artist_email'); ?></a>
-				            </span> | 
-				            <span class="artist-website">
-				                <a href="#"><?php the_field('artist_website'); ?></a>
-				       		 </span>
-				        </div><!-- .meta-content -->
-					</header><!-- .entry-header -->
-					<div class="hr"><hr/></div>
-					<p><?php the_field('artist_statement'); ?></p>
-				</div>
+				<!--
+				<?php
+					wp_link_pages( array(
+						'before' => '<div class="page-links">' . __( 'Pages:', 'mod' ),
+						'after'  => '</div>',
+					) );
+				?>
+				-->
 			</div>
-
-			<?php
-				wp_link_pages( array(
-					'before' => '<div class="page-links">' . __( 'Pages:', 'mod' ),
-					'after'  => '</div>',
-				) );
-			?>
 		</div><!-- .entry-content -->
 
 
