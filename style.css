@@ -867,8 +867,15 @@ ul.nav-menu {
 --------------------------------------------------------------*/
 #main-body {
     display: flex;
+    margin-top: 10px;
 }
 
+#side-pic {
+    margin: 15px;
+    margin-top: 30px
+    
+    
+}
 .wrapper{
 	max-width: 960px;
 	padding: 0 2em;
