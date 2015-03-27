@@ -28,23 +28,23 @@ get_header(); ?>
             
             <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                     
-                        <div id= "main-body">
-                                <div id= "side-pic">
+                <div id= "main-body">
+                    <div id= "side-pic">
                                     <?php 
-                                if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
+                        if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
                                     the_post_thumbnail();
                                 } 
                                 ?>
-                                </div> 
+                    </div> 
                                 
-                                </header><!-- .entry-header -->
-                                <div class="entry-content">
-                                    <header class="entry-header">
-                                <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-                                    <?php the_content(); ?>
+                            </header><!-- .entry-header -->
 
-                                </div><!-- .entry-content -->
-                        </div>
+                        <div class="entry-content">
+                            <header class="entry-header">
+                            <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+                            <?php the_content(); ?>
+                        </div><!-- .entry-content -->
+                    </div>
                         
                         <footer class="entry-footer">
                             <?php edit_post_link( __( 'Edit', 'mod' ), '<span class="edit-link">', '</span>' ); ?>
