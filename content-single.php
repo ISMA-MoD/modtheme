@@ -8,7 +8,8 @@
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="movie-wrapper">
 		<div class="the-movie embed-container" >
-			<iframe src='http://player.vimeo.com/video/121144312' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+		<!-- Append vimeo ID, better way to do this? Unclear how we're hosting videos-->
+			<iframe src='http://player.vimeo.com/video/<?php the_field('video-url'); ?>' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 		</div>
 	</div>
 
@@ -85,10 +86,13 @@
 					            	</a>
 					            </span> | 
 					            <span class="artist-email">
-					            	<a href="#"><?php the_field('artist_email'); ?></a>
+					            	<a href="#"><?php the_field('email_address'); ?></a>
 					            </span> | 
 					            <span class="artist-website">
-					                <a href="#"><?php the_field('artist_website'); ?></a>
+					                <a href="#"><?php the_field('website'); ?></a>
+					       		 </span> |
+					       		 <span class="artist-social">
+					                <a href="<?php the_field('social_media'); ?>"><?php the_field('social_media_site'); ?></a>
 					       		 </span>
 					        </div><!-- .meta-content -->
 						</header><!-- .entry-header -->
