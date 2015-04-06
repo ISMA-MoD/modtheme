@@ -8,7 +8,7 @@ Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: mod
-Tags: slkflkdslkjfd ldfl dfl 
+Tags: movies, animation
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -274,7 +274,7 @@ textarea {
 	font-size: 16px;
 	font-size: 1rem;
 	line-height: 1.5;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Source Sans Pro', sans-serif;
 }
 
 h1,
@@ -284,6 +284,10 @@ h4,
 h5,
 h6 {
 	clear: both;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-size: 1.6rem;
+    
 }
 
 p {
@@ -897,6 +901,7 @@ ul.nav-menu {
 .entry-content,
 .entry-summary {
 	margin: 1.5em 0 0;
+    padding: 150px;
 }
 
 .page-links {
@@ -1057,4 +1062,10 @@ object {
 
 .gallery-caption {
 	display: block;
+}
+
+
+.creator {
+  font-weight: lighter;
+  font-size: 50%;
 }
