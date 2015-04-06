@@ -272,26 +272,39 @@ select,
 textarea {
 	color: #404040;
 	font-size: 16px;
-	font-size: 1rem;
 	line-height: 1.5;
 	font-family: 'Source Sans Pro', sans-serif;
 }
-
-h1,
 h2,
-h3,
 h4,
 h5,
 h6 {
 	clear: both;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
-    font-size: 1.6rem;
-    
+    font-size: 1.6rem;    
+}
+h1{
+    clear: both;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-size: 2rem;
+    color: black;
+}
+h3 {
+    clear: both;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    font-size: 1.2rem;
+    color: #6d6864;
+    color: hsla(27, 4%, 41%, 1);
+    font-weight: 300;
 }
 
 p {
 	margin-bottom: 1.5em;
+    font-size: 1.2rem;
+
 }
 
 dfn,
@@ -865,6 +878,17 @@ ul.nav-menu {
 /*--------------------------------------------------------------
 10.1 Posts and pages
 --------------------------------------------------------------*/
+#main-body {
+    display: flex;
+    margin-top: 10px;
+}
+
+#side-pic {
+    margin: 15px;
+    margin-top: 30px
+    
+    
+}
 .wrapper{
 	max-width: 960px;
 	padding: 0 2em;
@@ -897,16 +921,26 @@ ul.nav-menu {
 	display: inline;
 }
 
-.page-content,
 .entry-content,
 .entry-summary {
 	margin: 1.5em 0 0;
-    padding: 150px;
+    padding-left: 150px;
+    padding-right: 200px;
+    
+}
+.page-content{
+    margin: 1.5em 0 0;
+    padding-left: 150px;
+    padding-right: 200px;
 }
 
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
+}
+
+#main-picture {
+    width: 100%;
 }
 
 /*--------------------------------------------------------------
