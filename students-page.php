@@ -9,9 +9,8 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
+			<h1 class="students-header">Students</h1>
 			<section class="student-index">
-				
-				
 
 				<?php
 				// Set up query arguments to find all posts
