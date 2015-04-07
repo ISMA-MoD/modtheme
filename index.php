@@ -14,6 +14,41 @@
 get_header(); ?>
 
 	<div id="primary" class="content-area">
+
+        <header class="index-header">
+            <nav id="filter" class="movie-filter">
+                <?php
+                $majors = get_terms('category');
+                $genres = get_terms('genres');
+
+                // Allow for clearing of all filter selections
+                echo '<a class="view-all current" href="#filter=*" >show all</a>';
+
+                echo '<div class="filter-block>';
+                echo '<h3 class="filter-title">Categories</h3>';
+
+                if ( !empty( $majors ) && !is_wp_error( $majors ) ){
+                    
+                    foreach ( $majors as $major ) {
+                        echo '<a class="' . $major->slug . '" href="#filter=.' . $major->slug . '">' . $major->name . '</a>';
+                    }
+                }
+
+                echo '</div>';
+
+                echo '<div class="filter-block>';
+                echo '<h3 class="filter-title">Genres</h3>';
+                if ( !empty( $genres ) && !is_wp_error( $genres ) ){
+                    
+                    foreach ( $genres as $genre ) {
+                        echo '<a class="' . $genre->slug . '" href="#filter=.' . $genre->slug . '">' . $genre->name . '</a>';
+                    }
+                }
+                echo '</div>';
+                ?>
+            </nav><!-- .project-filter -->
+        </header><!-- .page-header -->
+
 		<main id="main" class="site-main" role="main">
             <section id="container" class="isotope-container">
                 <?php if ( have_posts() ) : ?>

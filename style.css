@@ -1145,6 +1145,14 @@ a:hover .infocontainer {
 	margin-top: .1em;
 	line-height: 1.3em;
 }
+
+/* filter selector */
+
+.movie-filter a {
+	display: block;
+	padding: 1em;
+	background: #ededed;
+}
 /*--------------------------------------------------------------
 11.0 Layout
 --------------------------------------------------------------*/
