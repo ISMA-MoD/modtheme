@@ -1,9 +1,19 @@
-jQuery(function($){
+// Isotope settings
+jQuery(document).ready(function ($) {
+    
     var $container = $('#container');
     // init
     $container.isotope({
-      // options
-      itemSelector: '.item',
-      layoutMode: 'fitRows'
+        // options
+        itemSelector: '.item',
+        masonry: {
+              gutter: 10
+       }
     });
+    
+    // layout Isotope again after all images have loaded
+    $container.imagesLoaded( function() {
+      $container.isotope('layout');
+    });
+    
 });
