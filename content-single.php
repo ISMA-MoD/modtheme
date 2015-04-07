@@ -53,8 +53,8 @@
 				       		 </span> 
 				        </div><!-- .meta-content -->
 					</header><!-- .entry-header -->
-					<div class="hr"><hr/></div>
-					<p><?php the_content(); ?></p>
+					<hr>
+					<?php the_content(); ?>
 				</div>
 			</div>
 		</div>
@@ -96,25 +96,18 @@
 					       		 </span>
 					        </div><!-- .meta-content -->
 						</header><!-- .entry-header -->
-						<div class="hr"><hr/></div>
-						<p><?php the_field('artist_statement'); ?></p>
+						<hr>
+						<?php the_field('artist_statement'); ?>
 					</div>
 				</div>
-				<!--
-				<?php
-					wp_link_pages( array(
-						'before' => '<div class="page-links">' . __( 'Pages:', 'mod' ),
-						'after'  => '</div>',
-					) );
-				?>
-				-->
+
 			</div>
 		</div><!-- .entry-content -->
 
 
 
 		<footer class="entry-footer">
-			<?php mod_entry_footer(); ?>
+			
 		</footer><!-- .entry-footer -->
 	</article><!-- #post-## -->
 </div>

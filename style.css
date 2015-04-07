@@ -276,49 +276,49 @@ input,
 select,
 textarea {
 	color: #404040;
-	font-size: 16px;
+	font-size: 18px;
 	line-height: 1.5;
 	font-family: 'Source Sans Pro', sans-serif;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Roboto', sans-serif;
+}
+
+h1{
+    font-size: 20px;
+    font-size: 2rem;
+    line-height: 1.3em;
+    color: black;
+}
+
 h2,
 h4,
 h5,
 h6 {
-	clear: both;
-<<<<<<< HEAD
-    font-family: 'Roboto', sans-serif;
     font-size: 16px;
     font-size: 1.6rem;    
 }
-h1{
-    clear: both;
-    font-family: 'Roboto', sans-serif;
-    font-size: 20px;
-    font-size: 2rem;
-    color: black;
-}
+
 h3 {
-    clear: both;
-    font-family: 'Roboto', sans-serif;
     font-size: 12px;
     font-size: 1.2rem;
     color: #6d6864;
     color: hsla(27, 4%, 41%, 1);
     font-weight: 300;
-=======
 	padding-top:8px;
 	line-height:1.1;
->>>>>>> 3943491239aa577b289472c05c987d08c791ff05
 }
 
 p {
 	margin-bottom: 1.5em;
-<<<<<<< HEAD
     font-size: 1.2rem;
-
-=======
 	font-family:'Source Sans Pro', sans-serif;
->>>>>>> 3943491239aa577b289472c05c987d08c791ff05
 }
 
 dfn,
@@ -794,7 +794,15 @@ a:active {
 }
 
 .meta-content {
-	padding-top:10px;
+	padding-top: 5px;
+}
+
+.meta-content a {
+	color: hsl(0, 0%, 50%);
+}
+
+.meta-content a:hover {
+	color: black;
 }
 
 .page-text-container {
@@ -810,6 +818,10 @@ a:active {
 	margin-top:12px;
 }
 
+.artist-picture img {
+	border-radius: 5em;
+}
+
 .flex-column {
 	-webkit-flex:1;
 	flex:1;
@@ -821,7 +833,7 @@ a:active {
 	font-weight: 400;
 }
 
-.hr hr {
+hr {
 	margin-top:20px;
 }
 
@@ -920,15 +932,15 @@ ul.nav-menu {
     
 }
 .wrapper{
-	max-width: 960px;
+	max-width: 800px;
 	padding: 0 2em;
-	margin:auto;
+	margin: auto;
 }
 
 .artist-wrapper{
 	background-color: #eee;
 	width:100%;
-	padding-top:20px;
+	padding-top: 2em;
 }
 
 .movie-wrapper{
@@ -963,15 +975,11 @@ ul.nav-menu {
 
 .entry-content,
 .entry-summary {
-	margin: 1.5em 0 0;
-    padding-left: 150px;
-    padding-right: 200px;
+	margin-top: 1.5em;
     
 }
 .page-content{
     margin: 1.5em 0 0;
-    padding-left: 150px;
-    padding-right: 200px;
 }
 
 .page-links {
@@ -991,6 +999,14 @@ ul.nav-menu {
 	width: 33%;
 }
 
+
+/*--------------------------------------------------------------
+10.X Single Movie
+--------------------------------------------------------------*/
+
+body.single-post {
+	font-size: 20px;
+}
 
 /*--------------------------------------------------------------
 11.0 Layout
