@@ -265,3 +265,15 @@ function mod_category_transient_flusher() {
 add_action( 'edit_category', 'mod_category_transient_flusher' );
 add_action( 'save_post',     'mod_category_transient_flusher' );
 
+
+/**
+ * Display all available posts on front page and index pages
+ */
+
+function mod_display_all( $query ) {
+	if ( $query->is_home() && $query->is_main_query() ) {
+        $query->set( 'posts_per_page', '-1' );
+    }
+}
+add_action( 'pre_get_posts', 'mod_display_all' );
+
