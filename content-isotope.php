@@ -4,7 +4,7 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" class="item">
+<article id="post-<?php the_ID(); ?>" class="item <?php echo mod_create_tax_classes(); ?>">
     
     <a href="<?php echo esc_url( get_permalink() ); ?>">
     
