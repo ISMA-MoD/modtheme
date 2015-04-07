@@ -32,7 +32,6 @@
 				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 			</nav><!-- #site-navigation -->
 		</div><!-- .persistent -->
-        <script src="/Users/nicojing/Documents/my sites/wordpress/MOD/wp-content/themes/MODtheme/js"></script>
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">

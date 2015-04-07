@@ -104,7 +104,8 @@ function mod_scripts() {
     if (is_home()) {
         wp_enqueue_script( 'mod-isotope', get_template_directory_uri() . '/js/isotope.pkgd.min.js', array('jquery'), '20150406', true ); 
         wp_enqueue_script( 'mod-isotope-settings', get_template_directory_uri() . '/js/isotope.settings.js', array('mod-isotope'), '20150406', true ); 
-        wp_enqueue_script( 'animatrik-imagesloaded', get_template_directory_uri() . '/js/libs/imagesloaded.js', array('mod-isotope'), '20150406' );
+        wp_enqueue_script( 'mod-jquery-bbq', get_template_directory_uri() . '/js/libs/jquery.bbq.min.js', array('jquery'), '20150406', true);
+        wp_enqueue_script( 'mod-imagesloaded', get_template_directory_uri() . '/js/libs/imagesloaded.js', array('mod-isotope'), '20150406' );
     }
 
 	wp_enqueue_script( 'mod-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
