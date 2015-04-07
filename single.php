@@ -14,7 +14,11 @@ get_header(); ?>
 
 			<?php get_template_part( 'content', 'single' ); ?>
 
-			<?php the_post_navigation(); ?>
+			<?php 
+				// Hiding post navigation for now. 
+				// This is where a custom "related movies" display would go
+				// the_post_navigation(); 
+			?>
 
 		<?php endwhile; // end of the loop. ?>
 
