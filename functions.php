@@ -48,6 +48,7 @@ function mod_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 	add_image_size( 'student-head', 500, 500, array( 'center', 'top' ) );
+	add_image_size( 'mod-poster', 300 );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
