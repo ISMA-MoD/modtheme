@@ -23,7 +23,7 @@
 					// check if post has as post thumbail assigned to it
 						if ( has_post_thumbnail() ) {
 							echo '<figure class="poster">';
-							the_post_thumbnail();
+							the_post_thumbnail('mod-poster');
 							echo '</figure>';
 						}
 					?>
@@ -69,7 +69,7 @@
 						<?php 
 							$image = get_field('profile_picture');
 							if( !empty($image) ): ?>
-								<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+								<img src="<?php echo $image['sizes']['medium']; ?>" alt="" >
 
 						<?php endif; ?>
 					</div>
