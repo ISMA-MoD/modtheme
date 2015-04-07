@@ -22,20 +22,17 @@
             
                 <h2><?php the_title(); ?></h2> 
                 <div class="artistname">
-                    by <?php the_field('first_name'); ?> <?php the_field('last_name'); ?>
+                    <span>by</span> <?php the_field('first_name'); ?> <?php the_field('last_name'); ?>
                 </div><!-- .artistname -->
                 <div class="info-meta">
-                    <span class="time"><?php 
-                        echo get_the_term_list( $post->ID, 'durations', '', ', ' ); 
-                        ?>
+                    <span class="time">
+                        <?php echo strip_tags( get_the_term_list( $post->ID, 'durations', '', ', ' ) ); ?>
                     </span> | 
                     <span class="major">
-                        <?php echo get_the_category_list( ', ');?>
+                        <?php echo strip_tags( get_the_category_list( ', ') ); ?>
                     </span> | 
                     <span class="genre">
-                        <?php 
-                        echo get_the_term_list( $post->ID, 'genres', '', ', ' ); 
-                        ?>
+                        <?php echo strip_tags( get_the_term_list( $post->ID, 'genres', '', ', ' ) ); ?>
                      </span>
                 </div><!-- .info-meta -->
             

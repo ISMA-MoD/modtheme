@@ -7,7 +7,7 @@ jQuery(document).ready(function ($) {
         // options
         itemSelector: '.item',
         masonry: {
-              gutter: 10
+              gutter: 36
        }
     });
     
