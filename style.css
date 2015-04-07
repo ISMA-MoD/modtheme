@@ -995,9 +995,50 @@ ul.nav-menu {
 10.2 Student Index
 --------------------------------------------------------------*/
 
-.student {
-	width: 33%;
+.student-index {
+	padding: 3em;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
 }
+
+.student {
+	position: relative;
+	padding-top: 2em;
+	margin-bottom: 2em;
+}
+
+@media screen and (min-width: 400px) and (max-width: 999px) {
+	.student {
+		width: calc(50% - 1em);
+	}
+}
+
+@media screen and (min-width: 1000px) {
+	.student {
+		width: calc(25% - 2em);
+	}
+}
+
+.alphabet {
+	position: absolute;
+	top: -.4em;
+	font-size: 1.4em;
+	font-weight: bolder;
+	font-family: 'Roboto';
+}
+
+.student-name {
+	font-family: 'Roboto';
+	font-size: 1.2em;
+	font-weight: bolder;
+	margin-top: 0;
+}
+
+.student h3 {
+	color: black;
+}
+
 
 
 /*--------------------------------------------------------------
