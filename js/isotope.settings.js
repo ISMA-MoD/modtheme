@@ -1,8 +1,28 @@
 // Isotope settings
 jQuery(document).ready(function ($) {
     
-    var $container = $('#container');
-    // init
+    // Clear all checkboxes
+    $('a.view-all').click(function () {
+        $('.option-set input:checked').removeAttr('checked');
+        var clear = '*';
+        $container.isotope({ filter: clear });
+        $('.option-set li:has(input:checkbox:not(:checked))').removeClass('active');
+        return false;
+    });
+
+    // Add "active" class to li wrapping around checkboxes
+    $('.option-set input:checkbox').click(function () {
+        $('.option-set li:has(input:checkbox:checked)').addClass('active');
+        $('.option-set li:has(input:checkbox:not(:checked))').removeClass('active');
+    });
+
+    // Missing: Check for URL variable and add to checkbox if it's there.
+
+    // Set up key variables
+    var $container = $('#container'); // The container that holds all the isotope items
+    var $checkboxes = $('.movie-filter input'); // All the individual filter buttons
+
+    // Initiate Isotope
     $container.isotope({
         // options
         itemSelector: '.item',
@@ -11,35 +31,25 @@ jQuery(document).ready(function ($) {
        }
     });
     
-    // layout Isotope again after all images have loaded
+    // Layout Isotope again after all images have loaded
     $container.imagesLoaded( function() {
-      $container.isotope('layout');
+        $container.isotope('layout');
     });
 
+    // Filtering section: This function grabs all selected boxes and combines them into an annd filter
+    $checkboxes.change(function () {
+        var $filters = [];
+        // get checked checkboxes values
+        $checkboxes.filter(':checked').each(function () {
+            $filters.push(this.value);
+        });
+        // ['.red', '.blue'] -> '.red, .blue'
+        $filters = $filters.join('');
+        console.log($filters);
+        $container.isotope({ filter: $filters });
+    }); 
 
-
-    // Filtering section. Lots of stuff going on here
-    $('#filter').on( 'click', 'button', function() {
-        var filterValue = $(this).attr('data-filter');
-        $container.isotope({ filter: filterValue });
-    });
-    
-    // Detect when a filter is selected
-    $('.movie-filter a').click(function(){
-        // get href attr, remove leading #
-        var href = $(this).attr('href').replace( /^#/, '' ),
-        // convert href into object
-        // i.e. 'filter=.inner-transition' -> { filter: '.inner-transition' }
-        option = $.deparam( href, true );
-        // set hash, triggers hashchange on window
-        $.bbq.pushState( option );
-        if($(this).hasClass('view-all')){$(this).addClass('current');};
-        
-        //$(this).addClass('current');
-        
-        return false;
-    });
-
+    // Control the filter through a URL variable
     $(window).bind( 'hashchange', function( event ){
         // get options object from hash
         var hashOptions = $.deparam.fragment();
@@ -53,14 +63,8 @@ jQuery(document).ready(function ($) {
         if(justHash === '') { 
             return; 
         };
-        if(justHash === '*'){
-            justHash = '.view-all';
-        };
-        console.log(justHash);
-        $('.movie-filter').find('a.current').removeClass('current');
-        $('.movie-filter a' + justHash).addClass('current');
-
     })
+
     // trigger hashchange to capture any hash data on init
     .trigger('hashchange');
     

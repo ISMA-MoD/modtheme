@@ -20,31 +20,67 @@ get_header(); ?>
                 <?php
                 $majors = get_terms('category');
                 $genres = get_terms('genres');
+                $types = get_terms('post_tag');
+                $durations = get_terms('durations');
 
                 // Allow for clearing of all filter selections
                 echo '<a class="view-all current" href="#filter=*" >show all</a>';
 
+                // Categories
                 echo '<div class="filter-block>';
                 echo '<h3 class="filter-title">Categories</h3>';
 
+                echo '<div class="option-set" data-filter="genre">';
+                echo '<ul>';
                 if ( !empty( $majors ) && !is_wp_error( $majors ) ){
-                    
                     foreach ( $majors as $major ) {
-                        echo '<a class="' . $major->slug . '" href="#filter=.' . $major->slug . '">' . $major->name . '</a>';
-                    }
+                        echo '<li><input type="checkbox" value=".' . $major->slug . '" id="' . $major->slug . '"><label for="' . $major->slug . '">' . $major->name . '</label></li>';
+                   }
                 }
-
+                echo '</ul>';
                 echo '</div>';
 
+                // Genres
                 echo '<div class="filter-block>';
                 echo '<h3 class="filter-title">Genres</h3>';
+                echo '<div class="option-set" data-filter="genre">';
+                echo '<ul>';
                 if ( !empty( $genres ) && !is_wp_error( $genres ) ){
-                    
                     foreach ( $genres as $genre ) {
-                        echo '<a class="' . $genre->slug . '" href="#filter=.' . $genre->slug . '">' . $genre->name . '</a>';
-                    }
+                        echo '<li><input type="checkbox" value=".' . $genre->slug . '" id="' . $genre->slug . '"><label for="' . $genre->slug . '">' . $genre->name . '</label></li>';
+                   }
                 }
+                echo '</ul>';
                 echo '</div>';
+
+                // Types
+                /*
+                echo '<div class="filter-block>';
+                echo '<h3 class="filter-title">Types</h3>';
+                echo '<div class="option-set" data-filter="type">';
+                echo '<ul>';
+                if ( !empty( $types ) && !is_wp_error( $types ) ){
+                    foreach ( $types as $type ) {
+                        echo '<li><input type="checkbox" value=".' . $type->slug . '" id="' . $type->slug . '"><label for="' . $type->slug . '">' . $type->name . '</label></li>';
+                   }
+                }
+                echo '</ul>';
+                echo '</div>';
+                */
+
+                // Durations
+                echo '<div class="filter-block>';
+                echo '<h3 class="filter-title">Duration</h3>';
+                echo '<div class="option-set" data-filter="duration">';
+                echo '<ul>';
+                if ( !empty( $durations ) && !is_wp_error( $durations ) ){
+                    foreach ( $durations as $duration ) {
+                        echo '<li><input type="checkbox" value=".' . $duration->slug . '" id="' . $duration->slug . '"><label for="' . $duration->slug . '">' . $duration->name . '</label></li>';
+                   }
+                }
+                echo '</ul>';
+                echo '</div>';
+
                 ?>
             </nav><!-- .project-filter -->
         </header><!-- .page-header -->
