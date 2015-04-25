@@ -16,8 +16,6 @@ jQuery(document).ready(function ($) {
         $('.option-set li:has(input:checkbox:not(:checked))').removeClass('active');
     });
 
-    // Missing: Check for URL variable and add to checkbox if it's there.
-
     // Set up key variables
     var $container = $('#container'); // The container that holds all the isotope items
     var $checkboxes = $('.movie-filter input'); // All the individual filter buttons
@@ -53,16 +51,30 @@ jQuery(document).ready(function ($) {
     $(window).bind( 'hashchange', function( event ){
         // get options object from hash
         var hashOptions = $.deparam.fragment();
+        console.log(hashOptions);
+
         
         // apply options from hash
         $container.isotope( hashOptions );
         
         // Highlighting
         var justHash = $.param.fragment();
+        console.log(justHash);
         justHash = justHash.replace("filter=","");
+
         if(justHash === '') { 
             return; 
+        }; 
+
+        // Check for URL variable and check correct checkbox if it's there.
+        if(justHash === '.fvim') {
+            $('#fvim').prop('checked', true); 
         };
+        if(justHash === '.anim') {
+            $('#anim').prop('checked', true); 
+        };
+
+
     })
 
     // trigger hashchange to capture any hash data on init
