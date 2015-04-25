@@ -1088,7 +1088,7 @@ body.single-post {
  */
 
 .isotope-container:hover > .item img {
-	opacity: .25;
+	opacity: .45;
 	transition:  all .5s;
 
 }
