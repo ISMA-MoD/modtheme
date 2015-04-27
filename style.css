@@ -1108,6 +1108,77 @@ body.single-post {
 10.X Index
 --------------------------------------------------------------*/
 
+.index-header {
+	padding: 2em;
+	background: #ededed;
+
+}
+
+.filter-trigger {
+	text-align: right;
+	text-transform: lowercase;
+	font-size: 1.3em;
+	font-weight: 600;
+}
+
+.filter-trigger span {
+	color: hsl(0, 0%, 65%);
+	font-style: italic;
+}
+
+.filter-blocks {
+	display: flex;
+	margin-bottom: 1.6em;
+}
+
+.filter-block {
+	width: 33.33%;
+}
+
+.filter-title {
+	font-size: 1.6em;
+	font-weight: 600;
+	text-transform: lowercase;
+	color: black;
+	margin-top: .5em;
+}
+
+.filter-block ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	font-size: 1.3em;
+	font-weight: 600;
+	color: black;
+}
+
+.filter-block li label {
+	display: inline-block;
+	padding: 0 0 .5em .75em;
+}
+
+.filter-sub-nav {
+	display: flex;
+	justify-content: flex-end;
+}
+.filter-sub-nav a {
+	padding: .55em 2.2em ;
+	color: black;
+	font-size: 1.2em;
+	border: solid 3px black;
+	font-weight: 600;
+	margin-left: 1em;
+}
+
+.filter-sub-nav a:hover {
+	background: black;
+	color: #ededed;
+}
+
+.movie-filter {
+	display: none;
+}
+
 .isotope-container {
 	padding: 2em;
 }
@@ -1186,13 +1257,7 @@ a:hover .infocontainer {
 	line-height: 1.3em;
 }
 
-/* filter selector */
 
-.movie-filter a {
-	display: block;
-	padding: 1em;
-	background: #ededed;
-}
 /*--------------------------------------------------------------
 11.0 Layout
 --------------------------------------------------------------*/

@@ -16,18 +16,21 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 
         <header class="index-header">
+            <div class="filter-trigger">
+                <a id="show-filters" href="#"><span>Filter</span> Movies</a>
+            </div>
             <nav id="filter" class="movie-filter">
+            
+                <div class="filter-blocks">
+                
                 <?php
                 $majors = get_terms('category');
                 $genres = get_terms('genres');
                 $types = get_terms('post_tag');
                 $durations = get_terms('durations');
 
-                // Allow for clearing of all filter selections
-                echo '<a class="view-all current" href="#filter=*" >show all</a>';
-
                 // Categories
-                echo '<div class="filter-block>';
+                echo '<div class="filter-block">';
                 echo '<h3 class="filter-title">Categories</h3>';
 
                 echo '<div class="option-set" data-filter="genre">';
@@ -39,9 +42,10 @@ get_header(); ?>
                 }
                 echo '</ul>';
                 echo '</div>';
+                echo '</div>';
 
                 // Genres
-                echo '<div class="filter-block>';
+                echo '<div class="filter-block">';
                 echo '<h3 class="filter-title">Genres</h3>';
                 echo '<div class="option-set" data-filter="genre">';
                 echo '<ul>';
@@ -52,10 +56,11 @@ get_header(); ?>
                 }
                 echo '</ul>';
                 echo '</div>';
+                echo '</div>';
 
                 // Types
                 /*
-                echo '<div class="filter-block>';
+                echo '<div class="filter-block">';
                 echo '<h3 class="filter-title">Types</h3>';
                 echo '<div class="option-set" data-filter="type">';
                 echo '<ul>';
@@ -66,10 +71,11 @@ get_header(); ?>
                 }
                 echo '</ul>';
                 echo '</div>';
+                echo '</div>';
                 */
 
                 // Durations
-                echo '<div class="filter-block>';
+                echo '<div class="filter-block">';
                 echo '<h3 class="filter-title">Duration</h3>';
                 echo '<div class="option-set" data-filter="duration">';
                 echo '<ul>';
@@ -80,8 +86,15 @@ get_header(); ?>
                 }
                 echo '</ul>';
                 echo '</div>';
-
+                echo '</div>';
+                echo '</div><!-- .filter-blocks -->';
                 ?>
+                
+                <div class="filter-sub-nav">
+                    <a class="view-all current" href="#filter=*" >clear filters</a>
+                    <a id="close-filters" href="#">close filters</a>
+                </div>  
+                
             </nav><!-- .project-filter -->
         </header><!-- .page-header -->
 
