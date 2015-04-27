@@ -778,7 +778,33 @@ a:active {
 	height: 0; 
 	overflow: hidden; 
 	max-width: 100%; 
-	} 
+}
+
+.control {
+	position: absolute;
+	display: flex;
+	justify-content: space-around;
+	top: 0;
+	height: 100%;
+	width: 100%;
+}
+
+.control a {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	
+	width: calc(50% - 1px);
+	text-align: center;
+	background: hsla(0, 0%, 0%, .35);
+	color: white;
+	
+}
+
+.control a:hover {
+	background: hsla(0, 0%, 0%, .75);
+}
+
 .embed-container iframe, 
 .embed-container object, 
 .embed-container embed { 
@@ -1061,6 +1087,10 @@ ul.nav-menu {
 
 body.single-post {
 	font-size: 20px;
+}
+
+.mejs-overlay-button {
+	display: none;
 }
 
 

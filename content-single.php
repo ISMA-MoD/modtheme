@@ -7,9 +7,20 @@
 
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="movie-wrapper">
-		<div class="the-movie embed-container" >
-		<!-- Append vimeo ID, better way to do this? Unclear how we're hosting videos-->
-			<iframe src='http://player.vimeo.com/video/<?php the_field('video-url'); ?>' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+		<div class="the-movie embed-container" >			
+			<?php 
+				$video_url = get_field('video_url');
+				$attr = array(
+					'src'		=> esc_url( get_site_url() . '/videos/' . $video_url . '.mp4' ),
+					'width'		=> '',
+					'fullscreen'=> 'true'
+				);
+				echo wp_video_shortcode( $attr );
+			?>
+			<div class="control">
+				<a href="#" class="movie-trigger" data-bind="<?php echo esc_url( get_site_url() . '/videos/' . $video_url . '.mp4'); ?>">Play Full Movie</a> 
+				<a href="#" class="movie-trigger" data-bind="<?php echo esc_url( get_site_url() . '/videos/trailer.mp4'); ?>">Play Trailer</a> 
+			</div>
 		</div>
 	</div>
 
