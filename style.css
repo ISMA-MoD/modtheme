@@ -793,16 +793,26 @@ a:active {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	
-	width: calc(50% - 1px);
+	width: calc(50% - 3px);
 	text-align: center;
-	background: hsla(0, 0%, 0%, .35);
+	background: hsla(0, 0%, 0%, .20);
 	color: white;
-	
+	text-transform: lowercase;
 }
 
 .control a:hover {
-	background: hsla(0, 0%, 0%, .75);
+	background: hsla(0, 0%, 0%, .65);
+}
+
+.play-button {
+	display: block;
+	width: 240px;
+	padding: 1.3em;
+	background: hsla(0, 0%, 0%, .85);
+}
+
+a:hover .play-button {
+
 }
 
 .embed-container iframe, 

@@ -18,8 +18,9 @@
 				echo wp_video_shortcode( $attr );
 			?>
 			<div class="control">
-				<a href="#" class="movie-trigger" data-bind="<?php echo esc_url( get_site_url() . '/videos/' . $video_url . '.mp4'); ?>">Play Full Movie</a> 
-				<a href="#" class="movie-trigger" data-bind="<?php echo esc_url( get_site_url() . '/videos/trailer.mp4'); ?>">Play Trailer</a> 
+				<a href="#" class="movie-trigger" data-bind="<?php echo esc_url( get_site_url() . '/videos/trailer.mp4'); ?>"><span class="play-button">Play Trailer</span></a> 
+				<a href="#" class="movie-trigger" data-bind="<?php echo esc_url( get_site_url() . '/videos/' . $video_url . '.mp4'); ?>"><span class="play-button">Play Movie</span></a> 
+				
 			</div>
 		</div>
 	</div>
