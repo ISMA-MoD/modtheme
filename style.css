@@ -815,6 +815,10 @@ a:active {
 	text-transform: lowercase;
 }
 
+.control a.full {
+	width: 100%;
+}
+
 .control a:hover {
 	background: hsla(0, 0%, 0%, .55);
 }

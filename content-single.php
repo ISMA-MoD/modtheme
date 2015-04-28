@@ -3,7 +3,10 @@
  * @package modtheme
  */
 ?>
-
+<?php 
+// Get the current time for changing display
+$time = date( 'Y-m-d H:i:s', current_time( 'timestamp' ) ); 
+?>
 
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="movie-wrapper">
@@ -19,8 +22,15 @@
 				echo wp_video_shortcode( $attr );
 			?>
 			<div class="control">
-				<a href="#" class="movie-trigger" data-bind="<?php echo esc_url( get_site_url() . '/video/Trailers/' . $video_url . '_t.mp4'); ?>"><span class="play-button"><i class="icon-play-arrow"></i> Play Trailer</span></a> 
-				<a href="#" class="movie-trigger" data-bind="<?php echo esc_url( get_site_url() . '/video/Films/' . $video_url . '.mp4'); ?>"><span class="play-button"><i class="icon-play-arrow"></i> Play Movie</span></a> 
+
+				<?php
+				if ($time >= "2015-04-28 11:42:00") { ?>
+					<a href="#" class="movie-trigger" data-bind="<?php echo esc_url( get_site_url() . '/video/Trailers/' . $video_url . '_t.mp4'); ?>"><span class="play-button"><i class="icon-play-arrow"></i> Play Trailer</span></a> 
+					<a href="#" class="movie-trigger" data-bind="<?php echo esc_url( get_site_url() . '/video/Films/' . $video_url . '.mp4'); ?>"><span class="play-button"><i class="icon-play-arrow"></i> Play Movie</span></a>
+				<?php } else { ?>
+					<a href="#" class="movie-trigger full" data-bind="<?php echo esc_url( get_site_url() . '/video/Trailers/' . $video_url . '_t.mp4'); ?>"><span class="play-button"><i class="icon-play-arrow"></i> Play Trailer</span></a> 					
+				<?php } ?>
+				
 				
 			</div>
 		</div>
@@ -42,8 +52,10 @@
 					?>
 				</div>
 				<!-- Movie-info -->
+				
 				<div class="flex-column">
 					<header class="movie-info">
+
 						<h1 class="entry-title">
 						  	<?php the_title(); ?> 
 				            <span class="creator">by 
