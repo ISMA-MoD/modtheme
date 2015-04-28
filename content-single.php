@@ -11,15 +11,15 @@
 			<?php 
 				$video_url = get_field('video_url');
 				$attr = array(
-					'src'		=> esc_url( get_site_url() . '/videos/' . $video_url . '.mp4' ),
+					'src'		=> esc_url( get_site_url() . '/video/' . $video_url . '.mov' ),
 					'width'		=> '',
 					'fullscreen'=> 'true'
 				);
 				echo wp_video_shortcode( $attr );
 			?>
 			<div class="control">
-				<a href="#" class="movie-trigger" data-bind="<?php echo esc_url( get_site_url() . '/videos/trailer.mp4'); ?>"><span class="play-button">Play Trailer</span></a> 
-				<a href="#" class="movie-trigger" data-bind="<?php echo esc_url( get_site_url() . '/videos/' . $video_url . '.mp4'); ?>"><span class="play-button">Play Movie</span></a> 
+				<a href="#" class="movie-trigger" data-bind="<?php echo esc_url( get_site_url() . '/video/Trailers/' . $video_url . '.mov'); ?>"><span class="play-button">Play Trailer</span></a> 
+				<a href="#" class="movie-trigger" data-bind="<?php echo esc_url( get_site_url() . '/video/Films/' . $video_url . '.mov'); ?>"><span class="play-button">Play Movie</span></a> 
 				
 			</div>
 		</div>
@@ -51,18 +51,44 @@
 			        	</h1>
 						
 				        <div class="meta-content">
-				            <span class="time"><?php 
-				            	echo get_the_term_list( $post->ID, 'durations', '', ', ' ); 
-				                ?>
+				            <span class="time">
+				            	<?php
+								$terms = get_the_terms( $post->ID, 'durations' );
+														
+								if ( $terms && ! is_wp_error( $terms ) ) : 
+
+									$durations_array = array();
+
+									foreach ( $terms as $term ) {
+										$durations_array[] = $term->name;
+									}
+														
+									$durations = join( ", ", $durations_array );
+									
+									echo $durations; 
+
+								endif; 
+								?>
 				            </span> | 
 				            <span class="genre">
-				                <?php 
-				                echo get_the_term_list( $post->ID, 'genres', '', ', ' ); 
-				                ?>
-				       		 </span> | 
-				       		 <span class="trailer-link">
-				       		 	<a href="#">Trailer</a>
-				       		 </span> 
+				                <?php
+								$terms = get_the_terms( $post->ID, 'genres' );
+														
+								if ( $terms && ! is_wp_error( $terms ) ) : 
+
+									$genres_array = array();
+
+									foreach ( $terms as $term ) {
+										$genres_array[] = $term->name;
+									}
+														
+									$genres = join( ", ", $genres_array );
+									
+									echo $genres; 
+
+								endif; 
+								?>
+				       		 </span>
 				        </div><!-- .meta-content -->
 					</header><!-- .entry-header -->
 					<hr>
@@ -93,10 +119,15 @@
 				        	</h1>
 					        <div class="meta-content">
 					        	<span class="artist-major">
-					            	<a href="#">
-					            		<?php echo get_the_category_list( ', ');?>
-					            	</a>
-					            </span> | 
+			            			
+									<?php 
+									$cat = get_the_category(); 
+									$cat = $cat[0]; 
+									echo $cat->cat_name; 
+									?>
+
+					            </span>
+					            <!-- | 
 					            <span class="artist-email">
 					            	<a href="#"><?php the_field('email_address'); ?></a>
 					            </span> | 
@@ -106,6 +137,7 @@
 					       		 <span class="artist-social">
 					                <a href="<?php the_field('social_media'); ?>"><?php the_field('social_media_site'); ?></a>
 					       		 </span>
+					       		 -->
 					        </div><!-- .meta-content -->
 						</header><!-- .entry-header -->
 						<hr>
