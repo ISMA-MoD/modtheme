@@ -1113,7 +1113,7 @@ ul.nav-menu {
 10.X Single Movie
 --------------------------------------------------------------*/
 
-body.single-post {
+.site-content  {
 	font-size: 20px;
 }
 
