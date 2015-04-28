@@ -273,7 +273,7 @@ add_action( 'save_post',     'mod_category_transient_flusher' );
 function mod_display_all( $query ) {
 	if ( $query->is_home() && $query->is_main_query() ) {
         $query->set( 'posts_per_page', '-1' );
-        $query->set( 'orderby', 'random' );
+        $query->set( 'orderby', 'rand' );
     }
 }
 add_action( 'pre_get_posts', 'mod_display_all' );
