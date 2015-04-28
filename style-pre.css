@@ -975,17 +975,7 @@ ul.nav-menu {
 /*--------------------------------------------------------------
 10.1 Posts and pages
 --------------------------------------------------------------*/
-#main-body {
-    display: flex;
-    margin-top: 10px;
-}
 
-#side-pic {
-    margin: 15px;
-    margin-top: 30px
-    
-    
-}
 .wrapper{
 	max-width: 800px;
 	padding: 0 2em;
@@ -995,12 +985,10 @@ ul.nav-menu {
 .artist-wrapper{
 	background-color: #eee;
 	width:100%;
-	padding-top: 2em;
+	padding: 2em 0;
 }
 
-.movie-wrapper{
 
-}
 
 .switch a{
 	display: block;
@@ -1015,7 +1003,7 @@ ul.nav-menu {
 }
 
 .hentry {
-	margin: 0 0 1.5em;
+	margin: 0;
 }
 
 .byline,
@@ -1030,7 +1018,7 @@ ul.nav-menu {
 
 .entry-content,
 .entry-summary {
-	margin-top: 1.5em;
+	margin: 2em 0;
     
 }
 .page-content{
@@ -1044,6 +1032,11 @@ ul.nav-menu {
 
 #main-picture {
     width: 100%;
+}
+
+.entry-content ul {
+	margin: 0 0 0 1.5em;
+	padding: 0;
 }
 
 /*--------------------------------------------------------------

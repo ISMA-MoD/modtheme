@@ -24,32 +24,30 @@ get_header(); ?>
                      * @package modtheme
                      */
                     ?>
-          <img id="main-picture" src="imgs/aboutpage_img.jpg">
+                <div id= "side-pic">
+                    <?php 
+                        if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
+                            the_post_thumbnail();
+                        } 
+                    ?>
+                </div> 
             
             <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+            <div class="wrapper">
+                <div id="main-body">
                     
-                <div id= "main-body">
-                    <div id= "side-pic">
-                                    <?php 
-                        if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
-                                    the_post_thumbnail();
-                                } 
-                                ?>
-                    </div> 
-                                
-                            </header><!-- .entry-header -->
 
-                        <div class="entry-content">
-                            <header class="entry-header">
-                            <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-                            <?php the_content(); ?>
-                        </div><!-- .entry-content -->
-                    </div>
+                    <div class="entry-content">
+                        <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+                        <?php the_content(); ?>
+                    </div><!-- .entry-content -->
+                </div><!-- #main-body -->
                         
-                        <footer class="entry-footer">
-                            <?php edit_post_link( __( 'Edit', 'mod' ), '<span class="edit-link">', '</span>' ); ?>
-                        </footer><!-- .entry-footer -->
-                    </article><!-- #post-## -->
+                <footer class="entry-footer">
+                    <?php edit_post_link( __( 'Edit', 'mod' ), '<span class="edit-link">', '</span>' ); ?>
+                </footer><!-- .entry-footer -->
+                </div>
+            </article><!-- #post-## -->
 
 			<?php endwhile; // end of the loop. ?>
 
