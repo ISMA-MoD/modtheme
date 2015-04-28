@@ -816,14 +816,29 @@ a:active {
 }
 
 .control a:hover {
-	background: hsla(0, 0%, 0%, .65);
+	background: hsla(0, 0%, 0%, .55);
 }
 
 .play-button {
+	position: relative;
 	display: block;
 	width: 240px;
 	padding: 1.3em;
-	background: hsla(0, 0%, 0%, .85);
+	margin-left: 82px;
+	background: black;
+}
+
+.play-button i{
+	position: absolute;
+	display: block;
+	background: white;
+	color: black;
+	top: 0;
+	left: -82px;
+	height: 82px;
+	width: 82px;
+	font-size: 138%;
+	line-height: 82px;
 }
 
 a:hover .play-button {
@@ -1162,6 +1177,12 @@ body.single-post {
 .filter-trigger span {
 	color: hsl(0, 0%, 65%);
 	font-style: italic;
+}
+
+.filter-trigger i {
+	  font-size: 138%;
+	  display: inline-block;
+	  vertical-align: bottom;
 }
 
 .filter-blocks {

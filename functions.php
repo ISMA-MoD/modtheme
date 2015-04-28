@@ -100,6 +100,7 @@ add_filter( 'walker_nav_menu_start_el', 'mod_nav_description', 10, 4 );
 function mod_scripts() {
 	wp_enqueue_style( 'mod-style', get_stylesheet_uri() );
         wp_enqueue_style( 'mod-google-fonts', 'http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600|Roboto:300,500,500italic');
+        wp_enqueue_style( 'mod-icons', get_template_directory_uri() . '/fonts/icomoon/style.css');
     
     if (is_home()) {
         wp_enqueue_script( 'mod-isotope', get_template_directory_uri() . '/js/isotope.pkgd.min.js', array('jquery'), '20150406', true ); 

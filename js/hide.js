@@ -1,5 +1,6 @@
 // Hide/show filters
 jQuery(document).ready(function($){
+
     $("a#show-filters").click(function(){
         $(".movie-filter").slideToggle('slow');
         return false;
@@ -8,4 +9,5 @@ jQuery(document).ready(function($){
         $(".movie-filter").slideToggle('slow');
         return false;
     });
+
 });

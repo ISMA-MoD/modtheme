@@ -11,15 +11,16 @@
 			<?php 
 				$video_url = get_field('video_url');
 				$attr = array(
-					'src'		=> esc_url( get_site_url() . '/video/' . $video_url . '.mov' ),
+					'poster'	=> esc_url( get_site_url() . '/video/Posters/' . $video_url . '_p.jpg' ),
+					'src'		=> esc_url( get_site_url() . '/video/Films/' . $video_url . '.mp4' ),
 					'width'		=> '',
 					'fullscreen'=> 'true'
 				);
 				echo wp_video_shortcode( $attr );
 			?>
 			<div class="control">
-				<a href="#" class="movie-trigger" data-bind="<?php echo esc_url( get_site_url() . '/video/Trailers/' . $video_url . '.mov'); ?>"><span class="play-button">Play Trailer</span></a> 
-				<a href="#" class="movie-trigger" data-bind="<?php echo esc_url( get_site_url() . '/video/Films/' . $video_url . '.mov'); ?>"><span class="play-button">Play Movie</span></a> 
+				<a href="#" class="movie-trigger" data-bind="<?php echo esc_url( get_site_url() . '/video/Trailers/' . $video_url . '_t.mp4'); ?>"><span class="play-button"><i class="icon-play-arrow"></i> Play Trailer</span></a> 
+				<a href="#" class="movie-trigger" data-bind="<?php echo esc_url( get_site_url() . '/video/Films/' . $video_url . '.mp4'); ?>"><span class="play-button"><i class="icon-play-arrow"></i> Play Movie</span></a> 
 				
 			</div>
 		</div>

@@ -17,7 +17,7 @@ get_header(); ?>
 
         <header class="index-header">
             <div class="filter-trigger">
-                <a id="show-filters" href="#"><span>Filter</span> Movies</a>
+                <a id="show-filters" href="#"><span>Filter</span> Movies <i class="icon icon-keyboard-arrow-down"></i></a>
             </div>
             <nav id="filter" class="movie-filter">
             
