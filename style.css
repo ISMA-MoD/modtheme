@@ -951,10 +951,16 @@ hr {
 }
 
 .site-title {
-	margin: .5em 0;
-	text-align: center;
-	font-size: 130%;
-	text-transform: uppercase;
+	margin: 0;
+}
+.site-title a {
+	display: block;
+	width: 220px;
+	height: 257px;
+	background: url('images/mod-logo.png') top left no-repeat;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
 }
 
 .menu-toggle {
@@ -1336,11 +1342,11 @@ a:hover .infocontainer {
 	
 	.site-header {
 		-webkit-box-flex: 0;
-		-webkit-flex: 0 0 320px;
-		    -ms-flex: 0 0 320px;
-		        flex: 0 0 320px;
+		-webkit-flex: 0 0 256px;
+		    -ms-flex: 0 0 256px;
+		        flex: 0 0 256px;
 		height: 100vh;
-		border-left: 100px solid white;
+		border-left: 2em solid white;
 	}
 
 	.site-content {
@@ -1355,24 +1361,6 @@ a:hover .infocontainer {
 		width: 220px;
 		background: #222;
 
-	}
-	.site-title {
-		position: fixed;
-		left: 120px;
-		width: 100vh;
-		margin: 0;
-		padding: 0;
-		-webkit-transform: rotate(90deg);
-		    -ms-transform: rotate(90deg);
-		        transform: rotate(90deg);
-		-webkit-transform-origin: left top 0;
-		    -ms-transform-origin: left top 0;
-		        transform-origin: left top 0;
-		font-size: 9vh;
-	}
-
-	.site-title a {
-		color: #222;
 	}
 
 	.main-navigation {
@@ -1389,7 +1377,8 @@ a:hover .infocontainer {
 		-webkit-justify-content: flex-end;
 		    -ms-flex-pack: end;
 		        justify-content: flex-end;
-		height: 100vh;
+		height: -webkit-calc(100vh - 257px);
+		height: calc(100vh - 257px);
 	}
 
 	ul.nav-menu {

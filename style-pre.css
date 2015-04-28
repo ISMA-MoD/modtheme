@@ -926,10 +926,16 @@ hr {
 }
 
 .site-title {
-	margin: .5em 0;
-	text-align: center;
-	font-size: 130%;
-	text-transform: uppercase;
+	margin: 0;
+}
+.site-title a {
+	display: block;
+	width: 220px;
+	height: 257px;
+	background: url('images/mod-logo.png') top left no-repeat;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
 }
 
 .menu-toggle {
@@ -1288,9 +1294,9 @@ a:hover .infocontainer {
 	}
 	
 	.site-header {
-		flex: 0 0 320px;
+		flex: 0 0 256px;
 		height: 100vh;
-		border-left: 100px solid white;
+		border-left: 2em solid white;
 	}
 
 	.site-content {
@@ -1303,26 +1309,12 @@ a:hover .infocontainer {
 		background: #222;
 
 	}
-	.site-title {
-		position: fixed;
-		left: 120px;
-		width: 100vh;
-		margin: 0;
-		padding: 0;
-		transform: rotate(90deg);
-		transform-origin: left top 0;
-		font-size: 9vh;
-	}
-
-	.site-title a {
-		color: #222;
-	}
 
 	.main-navigation {
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-end;
-		height: 100vh;
+		height: calc(100vh - 257px);
 	}
 
 	ul.nav-menu {
