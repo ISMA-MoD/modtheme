@@ -1,28 +1,28 @@
 // Custom settings for video player
 jQuery(document).ready(function ($) {
-	console.log('Loaded');
-
 	
 	// Fullscreen when video plays
 	$('.wp-video-shortcode').on("play", function() {
 	    this.player.enterFullScreen();
-	    console.log(this.player);
-	    console.log('Play');
 	});
 
 	// Exit fullscreen when video pauses
 	$('.wp-video-shortcode').on("pause", function() {
 	    this.player.exitFullScreen();
-	    console.log('Pause');
 	});
 
 	// Control for switching movie source
 	$('.control a').click(function(){
-		console.log('clicked');
+        // Get current video element
+        var $current_url = $('.wp-video-shortcode').attr( "src" );
+        // Get video element called by click
         var $url = $( this ).attr( 'data-bind' );
-        $('.wp-video-shortcode').attr( "src", $url );
-        $('.wp-video-shortcode source').attr( "src", $url );
-        console.log($url);
+        // Only switch video element source if the URL is different
+        // This preserves the player location between pause and play states
+        if ( $url != $current_url) { 
+            $('.wp-video-shortcode').attr( "src", $url );
+            $('.wp-video-shortcode source').attr( "src", $url );
+        }
         return false;
     });
 

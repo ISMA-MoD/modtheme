@@ -24,7 +24,8 @@ $time = date( 'Y-m-d H:i:s', current_time( 'timestamp' ) );
 			<div class="control">
 
 				<?php
-				if ($time >= "2015-04-28 11:42:00") { ?>
+                //if ( ($time <= "2015-04-30 18:00:00") || ($time >= "2015-05-03 10:00:00") ) { 
+				if ( ($time <= "2015-05-01 18:00:00") || ($time >= "2015-05-03 10:00:00") ) { ?>
 					<a href="#" class="movie-trigger" data-bind="<?php echo esc_url( get_site_url() . '/video/Trailers/' . $video_url . '_t.mp4'); ?>"><span class="play-button"><i class="icon-play-arrow"></i> Play Trailer</span></a> 
 					<a href="#" class="movie-trigger" data-bind="<?php echo esc_url( get_site_url() . '/video/Films/' . $video_url . '.mp4'); ?>"><span class="play-button"><i class="icon-play-arrow"></i> Play Movie</span></a>
 				<?php } else { ?>
